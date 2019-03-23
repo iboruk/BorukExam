@@ -6,7 +6,7 @@ import parentTest.ParentTest;
 public class LoginWithPageObject extends ParentTest {
     @Test
     public void validLogin(){
-        doLogin("Student", "909090");
+        doLogin("iboruk@ukr.net", "Boruk_G38");
         checkExpectedResult("Avatar is not presented", homePage.isAvatarPresent()
         );
     }

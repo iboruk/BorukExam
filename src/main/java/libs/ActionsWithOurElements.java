@@ -42,7 +42,7 @@ public class ActionsWithOurElements {
     public boolean isElementPresent(WebElement element) {
         try {
             boolean isDisplayed = element.isDisplayed();
-            logger.info("Element is displayed = " + isDisplayed);
+            logger.info("Element " + element + " is displayed = " + isDisplayed);
             return isDisplayed;
         } catch (Exception e) {
             logger.info("Element is displayed = FALSE");

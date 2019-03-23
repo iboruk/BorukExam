@@ -14,7 +14,13 @@ public class LoginPage extends ParentPage {
         super(webDriver);
     }
 
-    @FindBy(name = "_username")
+    @FindBy(xpath = ".//*[@class='name' and contains(text(), 'Вход')]")
+    private WebElement enterButton;
+
+    @FindBy (xpath = ".//*[@class='h3' and contains(text(), 'Вход')]")
+    private WebElement enterElement;
+
+    @FindBy(xpath = ".//*[@name='login']") //(name = "login")
     private WebElement inputLogin; // object should create after new
 
     @FindBy(id = "password")
@@ -23,14 +29,19 @@ public class LoginPage extends ParentPage {
     @FindBy(tagName = "button")
     private WebElement button;
 
-    public void openPage() {
+    public void openHomePage() {
         try {
-            webDriver.get("http://v3.test.itpmgroup.com");
+            webDriver.get("https://hotline.ua/");
             logger.info("Login page was opened");
         } catch (Exception e) {
             logger.error("Can not open Login page " + e); // for logger
             Assert.fail("Can not open Login page " + e); // for report
         }
+    }
+
+    public void callLoginPage() {
+        actionsWithOurElements.clickOnElement(enterButton);
+        actionsWithOurElements.isElementPresent(enterElement);
     }
 
     public void enterTextInToInputLogin(String login) {

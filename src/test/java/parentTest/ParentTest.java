@@ -27,7 +27,7 @@ public class ParentTest {
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
-        instPage = new InstallationPage(webDriver);
+        //instPage = new InstallationPage(webDriver);
     }
 
     @After
@@ -40,7 +40,9 @@ public class ParentTest {
     }
 
     public void doLogin(String userName, String userPassword){
-        loginPage.openPage();
+        loginPage.openHomePage();
+        loginPage.callLoginPage();
+        loginPage.clickOnElement();
         loginPage.enterTextInToInputLogin(userName);
         loginPage.enterTextInToInputPass(userPassword);
         loginPage.clickOnButtonSubmit();

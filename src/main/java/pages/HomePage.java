@@ -10,7 +10,7 @@ public class HomePage extends ParentPage {
     }
 
 
-    @FindBy(xpath = ".//*[@class='pull-left image']")
+    @FindBy(xpath = ".//*[@class='name ellipsis'] and contains(text(), 'BorukG38')")
     private WebElement avatar;
 
     public boolean isAvatarPresent() {
