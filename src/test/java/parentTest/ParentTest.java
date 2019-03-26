@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
-import pages.InstallationPage;
+import pages.CellPhonePage;
 import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
@@ -15,7 +15,7 @@ public class ParentTest {
     public WebDriver webDriver;
     protected LoginPage loginPage;
     protected HomePage homePage;
-    protected InstallationPage instPage;
+    protected CellPhonePage instPage;
 //
     @Before
     public void setUp() {
@@ -24,10 +24,10 @@ public class ParentTest {
 
         webDriver = new ChromeDriver(); // create object for chrome
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
-        //instPage = new InstallationPage(webDriver);
+        //cellPhonePage = new CellPhonePage(webDriver);
     }
 
     @After
@@ -40,11 +40,12 @@ public class ParentTest {
     }
 
     public void doLogin(String userName, String userPassword){
-        loginPage.openHomePage();
+        homePage.openHomePage();
         loginPage.callLoginPage();
-        loginPage.clickOnElement();
+        //loginPage.clickOnElement();
         loginPage.enterTextInToInputLogin(userName);
         loginPage.enterTextInToInputPass(userPassword);
-        loginPage.clickOnButtonSubmit();
+        //loginPage.clickOnButtonSubmit();
+        loginPage.clickOnElements();
     }
 }

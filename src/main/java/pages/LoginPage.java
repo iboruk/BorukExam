@@ -23,21 +23,13 @@ public class LoginPage extends ParentPage {
     @FindBy(xpath = ".//*[@name='login']") //(name = "login")
     private WebElement inputLogin; // object should create after new
 
-    @FindBy(id = "password")
+    @FindBy(name = "password")
     private WebElement inputPass;
 
-    @FindBy(tagName = "button")
+    @FindBy(xpath = ".//*[@class='btn-graphite btn-cell' and @type='submit']")
     private WebElement button;
 
-    public void openHomePage() {
-        try {
-            webDriver.get("https://hotline.ua/");
-            logger.info("Login page was opened");
-        } catch (Exception e) {
-            logger.error("Can not open Login page " + e); // for logger
-            Assert.fail("Can not open Login page " + e); // for report
-        }
-    }
+
 
     public void callLoginPage() {
         actionsWithOurElements.clickOnElement(enterButton);
@@ -79,7 +71,7 @@ public class LoginPage extends ParentPage {
         }
     }
 
-    public void clickOnElement() {
+    public void clickOnElements() {
         actionsWithOurElements.clickOnElement(button);
     }
 }

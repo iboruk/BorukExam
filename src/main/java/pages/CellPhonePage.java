@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class InstallationPage extends ParentPage {
+public class CellPhonePage extends ParentPage {
 
     @FindBy(id = "installed_spares_lastSpareIsGood")
     private WebElement clickChekBoxOn;
 
-    public InstallationPage(WebDriver webDriver) {
+    public CellPhonePage(WebDriver webDriver) {
         super(webDriver);
     }
 

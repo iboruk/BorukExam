@@ -5,7 +5,7 @@ import parentTest.ParentTest;
 
 import static org.junit.Assert.*;
 
-public class InstallationWithPageObject extends ParentTest {
+public class CellPhoneWithPageObject extends ParentTest {
     @Test
     public void installationPageOpen(){
         doLogin("Student", "909090");
